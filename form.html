@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projeto 2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            height: 100vh;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #580276;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        form {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        label {
+            display: flex; 
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            color: #580276;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        input[type="number"],
+        input[type="text"], 
+        select {
+            padding: 10px 15px;
+            width: 300px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,.4);
+        }
+        input[type="number"]:focus,
+        input[type="text"]:focus, 
+        input[type="submit"]:focus,
+        select:focus {
+            box-shadow:  0 .3rem .4rem 0 rgba(88,2,118,.3);
+            outline: 0;
+        }
+        select {
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            padding: 15px;
+            width: 300px;
+            margin-top: 10px;
+            outline: 0;
+            background: #580276;
+            color: #f4f4f4;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all .4s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background: rgba(88,2,118,.9);
+            box-shadow: 0 .3rem .4rem 0 rgba(0,0,0,.4);
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/info" method="post">
+        <h1>Projeto<br>Infraestrutura de Software</h1>
+        <div>
+            <label for="ip">IP</label>    
+            <input name="ip" id="ip" type="text" placeholder="Digite o endereço IP" required />
+        </div>
+        <div>
+            <label for="memoria">Memória</label> 
+            <input name="memoria" id="memoria" type="text" placeholder="" required /><br>
+        </div> 
+        <div>
+            <label for="so">SO</label>
+            <select name="so" id="so" required>
+                <option selected value="" hidden>--Selecione--</option>
+                <option value="Windows">Windows 8.1</option>
+                <option value="Linux">Linux Ubuntu 18.04</option>
+            </select>
+        </div>
+        <div>
+            <label for="cpu">CPU</label>
+            <input name="cpu" id="cpu" type="number" min="1" placeholder="Quantas CPUs?" required /><br>
+        </div>
+        <input value="Enviar" type="submit" />
+    </form>
+    
+</body>
+</html>
